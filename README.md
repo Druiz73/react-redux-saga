@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 ### App-MoviePoP
 
-## Clonar el repo: https://github.com/airamain/App-MoviePoP.git
-
-Luego ejecutar los siguientes comandos
+ejecutar los siguientes comandos
 
  `npm i`
 
@@ -20,4 +17,4 @@ Peticiones con axios
 Manejo de estados globales con Redux
 Middleware para peticiones Sagas
 
->>>>>>> 654bbc77acfe34aa6ff244abe6ec0aef1d73ebb0
+
