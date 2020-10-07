@@ -1,10 +1,15 @@
 import axios from 'axios'
 
-const baseUrl = 'https://www.omdbapi.com/?apikey=ffd0c3a5';
+const baseUrl = 'https://api.tvmaze.com/search/shows';
+const baseId = 'https://api.tvmaze.com/shows'
 
 
-export const apiCall = (url, data, headers, method) => axios({
+export const apiCall = (url, method) => axios({
     method,
     url: baseUrl + url,
-    data, headers
+})
+
+export const apiCallById = (url, method) => axios({
+    method,
+    url: baseId + url,
 })

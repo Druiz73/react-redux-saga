@@ -1,2 +1,10 @@
-# react-redux-saga
-App de practica consumiendo api de peliculas
+### App-MoviePoP
+
+## Clonar el repo: https://github.com/airamain/App-MoviePoP.git
+
+Luego ejecutar los siguientes comandos
+
+ `npm i`
+
+ `npm run start`
+ 

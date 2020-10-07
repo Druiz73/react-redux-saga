@@ -1,29 +1,22 @@
 import React from 'react'
-import { Card, Grid, Typography, Button } from '@material-ui/core'
-import styles from './styles'
-import { withRouter } from 'react-router-dom'
+import './style.css'
+import { withRouter, Link } from 'react-router-dom'
+import imgDefault from '../../images/img-default.jpeg'
+import Error404 from '../Error404'
 
-const MovieResult = ({ Title, Year, Type, imdbID, Poster, history }) => {
+const MovieResult = (props) => {
 
-    const classes = styles();
-    console.log()
-    const handleSeeMovie = () => {
-        history.push(`/movies/${imdbID}`)
+    if (props !== '') {
+        return (
+            <div  className="col-lg-4 col-md-4 col-sm-6 col-xs-6 mb-3 mx-auto text-center my-5">
+                <h3 className="text-center text-white">{props.name}</h3>
+                {props.image !== null ? <Link to={`/movies/${props.id}`}> <img src={props.image.medium} alt="img" /></Link> : <img src={imgDefault} alt="img" />
+                }
+            </div >
+        )
+    } else {
+        return (<div className="m-5"><Error404 /></div>)
     }
-    return (
-        <Card className={classes.cardContainer}>
-            <Grid container>
-                <Grid item>
-                    <img src={Poster} alt={Title} className={classes.poster} />
-                </Grid>
-                <Grid item className={classes.titlesContainer}>
-                    <Typography>{Title}</Typography>
-                    <Typography>{Year}</Typography>
-                    <Typography>{Type}</Typography>
-                    <Button color="primary" variant="contained" onClick={handleSeeMovie}>Ver más</Button>
-                </Grid>
-            </Grid>
-        </Card>
-    )
+
 }
 export default withRouter(MovieResult);
